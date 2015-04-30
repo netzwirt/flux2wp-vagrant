@@ -3,7 +3,7 @@
 Vagrant box which helps to import a fluxcms blog into a WP Installation.
 
 ## Description
-Just run `vagrant up` to create a fresh WP install with pre-installed fluxcms imnporter.
+Just run `vagrant up` to create a fresh WP install with pre-installed fluxcms importer.
 
 ## Access
 - URL: http://10.3.45.3/
