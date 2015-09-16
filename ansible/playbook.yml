@@ -125,12 +125,23 @@
         url=https://downloads.wordpress.org/plugin/wordpress-importer.0.6.1.zip
         dest=/vagrant/wordpress-importer.0.6.1.zip
         validate_certs=no
-        
+
     - name: Unzip WordPress Importer
       unarchive: src=../wordpress-importer.0.6.1.zip dest=/vagrant/wordpress/wp-content/plugins/
-   
+
+    - name: Download flux-importer plugin
+      get_url:
+        url=https://github.com/netzwirt/wordpress-flux-importer/archive/master.zip
+        dest=/vagrant/fluxcmsblog-importer.zip
+
     - name: Unzip FluxToWp Importer
-      unarchive: src=../ansible/templates/fluxcmsblog-importer.zip dest=/vagrant/wordpress/wp-content/plugins/
+      unarchive: src=../fluxcmsblog-importer.zip dest=/vagrant/wordpress/wp-content/plugins/
+
+    - name: Move FluxToWp to plugins
+      shell: mv /vagrant/wordpress/wp-content/plugins/wordpress-flux-importer-master/fluxcmsblog-importer/ /vagrant/wordpress/wp-content/plugins/fluxcmsblog-importer/        
+
+    - name: Remove obsolete folder
+      shell: rm -rf /vagrant/wordpress/wp-content/plugins/wordpress-flux-importer-master/
 
     - name: Remove WP Plugins and Downloaded Archives
       file: name={{ item }} state=absent
@@ -140,7 +151,7 @@
         - /vagrant/wordpress.zip
         - /vagrant/wordpress-importer.0.6.1.zip
         - /vagrant/wordpress/wp-content/plugins/__MACOSX
-        
+
     - name: Setup WP 
       shell: cp /vagrant/ansible/templates/wp-config.php /vagrant/wordpress/wp-config.php        
 
