@@ -142,10 +142,8 @@
         - /vagrant/wordpress/wp-content/plugins/__MACOSX
         
     - name: Setup WP 
-      template:
-        src: "templates/wp-config.php"
-        dest: "/vagrant/wordpress/wp-config.php"
-        
+      shell: cp /vagrant/ansible/templates/wp-config.php /vagrant/wordpress/wp-config.php        
+
     - name: Copy virtual host setup over
       template: src=templates/wordpress.conf dest=/etc/apache2/sites-available/
 
