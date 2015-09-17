@@ -1,5 +1,5 @@
 .vagrant
-wordpress
+wordpress*
 .DS_Store
 .project
-/fluxcmsblog-importer.zip
+fluxcmsblog-importer.zip
