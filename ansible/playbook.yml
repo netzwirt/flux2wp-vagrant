@@ -149,8 +149,8 @@
         - /vagrant/wordpress/wp-content/plugins/akismet
         - /vagrant/wordpress/wp-content/plugins/hello.php
         - /vagrant/wordpress.zip
+        - /vagrant/fluxcms-importer.zip
         - /vagrant/wordpress-importer.0.6.1.zip
-        - /vagrant/wordpress/wp-content/plugins/__MACOSX
 
     - name: Setup WP 
       shell: cp /vagrant/ansible/templates/wp-config.php /vagrant/wordpress/wp-config.php        
