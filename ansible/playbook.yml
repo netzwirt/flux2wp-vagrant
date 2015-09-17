@@ -149,7 +149,7 @@
         - /vagrant/wordpress/wp-content/plugins/akismet
         - /vagrant/wordpress/wp-content/plugins/hello.php
         - /vagrant/wordpress.zip
-        - /vagrant/fluxcms-importer.zip
+        - /vagrant/fluxcmsblog-importer.zip
         - /vagrant/wordpress-importer.0.6.1.zip
 
     - name: Setup WP 
